@@ -3,7 +3,12 @@ name = "fastapibaseapp"
 version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "fastapi>=0.136.1",
+    "pydantic-settings>=2.14.1",
+    "pydantic[email]>=2.13.4",
+    "uvicorn[standard]>=0.47.0",
+]
 
 [dependency-groups]
 dev = [
