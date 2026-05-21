@@ -11,3 +11,20 @@ dev = [
     "prek>=0.4.1",
     "ruff>=0.15.14",
 ]
+
+
+[tool.mypy]
+python_version = "3.14"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+plugins = [
+    "pydantic.mypy"
+]
+
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true

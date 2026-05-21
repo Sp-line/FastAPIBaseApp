@@ -66,3 +66,16 @@ types_or = [
     "python",
     "pyi",
 ]
+
+
+[[repos]]
+repo = "https://github.com/pre-commit/mirrors-mypy"
+rev = "v1.10.0"
+
+
+[[repos.hooks]]
+id = "mypy"
+additional_dependencies = [
+    "fastapi",
+    "pydantic"
+]
