@@ -2,6 +2,11 @@ line-length = 89
 target-version = "py314"
 
 
+extend-exclude = [
+    "app/alembic",
+]
+
+
 [format]
 line-ending = "lf"
 docstring-code-format = true
