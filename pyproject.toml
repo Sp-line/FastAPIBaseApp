@@ -43,3 +43,41 @@ exclude = [
 init_forbid_extra = true
 init_typed = true
 warn_required_dynamic_aliases = true
+
+
+[tool.pytest.ini_options]
+minversion = "9.0"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+addopts = [
+    "-v",
+    "--strict-markers",
+    "--cov=app",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]
+
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::UserWarning",
+]
+
+
+[tool.coverage.run]
+source = ["app"]
+branch = true
+
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+sort = "-Cover"
+
+omit = [
+    "app/alembic/*",
+    "app/main.py",
+]
