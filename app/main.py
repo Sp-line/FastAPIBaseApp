@@ -1,30 +1,10 @@
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from collections.abc import AsyncIterator
-
-from contextlib import asynccontextmanager
-
 import uvicorn
 from api import router
 from core.config import settings
-from core.models import database
-from fastapi import FastAPI
+from create_app import create
 
-
-@asynccontextmanager
-async def lifespan(_: FastAPI) -> AsyncIterator[None]:
-    yield
-    await database.dispose()
-
-
-app = FastAPI(
-    lifespan=lifespan,
-)
-app.include_router(
-    router,
-    prefix=settings.api.prefix,
-)
+app = create()
+app.include_router(router)
 
 if __name__ == "__main__":
     uvicorn.run(
