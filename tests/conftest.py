@@ -20,7 +20,7 @@ from app.core.models.base import Base
 from app.dependencies.infrastructure import InfrastructureProvider
 from app.main import app
 from tests.constants import Messages
-from tests.utils import should_run_db
+from tests.support import should_run_db
 
 if TYPE_CHECKING:
     from collections.abc import AsyncIterator
