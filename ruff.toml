@@ -95,6 +95,7 @@ ignore = [
 
 
 [lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
 
 
 [lint.flake8-tidy-imports]
