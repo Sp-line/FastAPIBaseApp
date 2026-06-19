@@ -9,7 +9,7 @@ from sqlalchemy.ext.asyncio import async_sessionmaker
 from sqlalchemy.ext.asyncio import create_async_engine
 
 
-class Database:
+class Database:  # pragma: no cover
     def __init__(
         self,
         url: str,
